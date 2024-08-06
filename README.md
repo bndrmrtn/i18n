@@ -20,7 +20,7 @@ package main
 import "github.com/bndrmrtn/i18n"
 
 func main() {
-	i := i18n.New(&i18n.Config{
+    i := i18n.New(i18n.Config{
         FallbackLocale: "en", // Fallback locale if the desired language is not in the supported languages.
         Data:  []Language{}, // List of language data
         LoadDir: "./lang", // A directory containing the language files.
