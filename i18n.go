@@ -69,6 +69,10 @@ func (i *I18n) CreateT(language string) func(key string, values ...interface{}) 
 	return t.Translate
 }
 
+func (i *I18n) Languages() []string {
+	return i.languages
+}
+
 func (i *I18n) loadLanguageData(langs []Language) {
 	for _, data := range langs {
 		if !slices.Contains(i.languages, data.Language) {

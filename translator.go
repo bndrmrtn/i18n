@@ -17,6 +17,9 @@ type Translator interface {
 	Translate(key string, value ...interface{}) string
 	// T is a shortcut for Translate. It uses the current locale.
 	T(key string, value ...interface{}) string
+
+	// Languages returns the list of languages
+	Languages() []string
 }
 
 type T struct {
@@ -47,6 +50,10 @@ func (t *T) Translate(key string, value ...interface{}) string {
 
 func (t *T) T(key string, value ...interface{}) string {
 	return t.Translate(key, value...)
+}
+
+func (t *T) Languages() []string {
+	return t.i18n.languages
 }
 
 func (t *T) parseMessage(message string, value ...interface{}) string {
