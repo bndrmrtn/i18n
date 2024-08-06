@@ -1,6 +1,9 @@
 package i18n
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"encoding/xml"
+)
 
 type Unmarshal struct {
 	Extensions []string
@@ -9,4 +12,5 @@ type Unmarshal struct {
 
 var DefaultUnmarshaler = []Unmarshal{
 	{[]string{"json"}, json.Unmarshal},
+	{[]string{"xml"}, xml.Unmarshal},
 }

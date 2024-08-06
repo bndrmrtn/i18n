@@ -33,7 +33,7 @@ type Config struct {
 	Unmarshallers []Unmarshal
 }
 
-func New(config *Config) *I18n {
+func New(config Config) *I18n {
 	i := new(I18n)
 	i.fallback = config.FallbackLocale
 	i.languages = []string{}

@@ -7,7 +7,7 @@ import (
 )
 
 func Test_I18n_Create(t *testing.T) {
-	i18n := New(&Config{
+	i18n := New(Config{
 		FallbackLocale: "en",
 		LoadDir:        "./lang",
 	})
@@ -18,7 +18,7 @@ func Test_I18n_Create(t *testing.T) {
 }
 
 func Test_Translation(t *testing.T) {
-	i18n := New(&Config{
+	i18n := New(Config{
 		FallbackLocale: "en",
 		LoadDir:        "./lang",
 	})
@@ -31,7 +31,7 @@ func Test_Translation(t *testing.T) {
 }
 
 func Test_UnnamedArgs(t *testing.T) {
-	i18n := New(&Config{
+	i18n := New(Config{
 		FallbackLocale: "en",
 		LoadDir:        "./lang",
 	})
@@ -44,7 +44,7 @@ func Test_UnnamedArgs(t *testing.T) {
 }
 
 func Test_NamedArgs(t *testing.T) {
-	i18n := New(&Config{
+	i18n := New(Config{
 		FallbackLocale: "en",
 		LoadDir:        "./lang",
 	})
@@ -57,7 +57,7 @@ func Test_NamedArgs(t *testing.T) {
 }
 
 func Test_ConfigMessages(t *testing.T) {
-	i18n := New(&Config{
+	i18n := New(Config{
 		FallbackLocale: "en",
 		Data:           getLanguageData(),
 	})
@@ -76,7 +76,7 @@ func Test_ConfigMessages(t *testing.T) {
 }
 
 func Test_BothMessages(t *testing.T) {
-	i18n := New(&Config{
+	i18n := New(Config{
 		FallbackLocale: "en",
 		Data:           getLanguageData(),
 		LoadDir:        "./lang",
@@ -104,7 +104,7 @@ func Test_BothMessages(t *testing.T) {
 }
 
 func Test_LanguageChange(t *testing.T) {
-	i18n := New(&Config{
+	i18n := New(Config{
 		FallbackLocale: "en",
 		LoadDir:        "./lang",
 	})
