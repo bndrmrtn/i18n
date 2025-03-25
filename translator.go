@@ -20,11 +20,21 @@ type Translator interface {
 
 	// Languages returns the list of languages
 	Languages() []string
+
+	// New creates a new copy of the current translator
+	New() Translator
 }
 
 type T struct {
 	i18n   *I18n
 	locale string
+}
+
+func (t *T) New() Translator {
+	return &T{
+		i18n:   t.i18n,
+		locale: t.language,
+	}
 }
 
 func (t *T) Locale() string {
