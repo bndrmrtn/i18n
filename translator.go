@@ -33,7 +33,7 @@ type T struct {
 func (t *T) New() Translator {
 	return &T{
 		i18n:   t.i18n,
-		locale: t.language,
+		locale: t.locale,
 	}
 }
 
